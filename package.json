@@ -1,0 +1,25 @@
+{
+  "name": "prueba",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Isveth/Prueba.git"
+  },
+  "author": "Isveth Alfonso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Isveth/Prueba/issues"
+  },
+  "homepage": "https://github.com/Isveth/Prueba#readme",
+  "dependencies": {
+    "emulators": "^0.72.5",
+    "firebase": "^9.6.7",
+    "firebaseui": "^6.0.1"
+  }
+}
