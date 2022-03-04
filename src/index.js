@@ -1,8 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAuth, connectAuthEmulator, signInWithEmailAndPassword } from "firebase/auth";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getAuth,signInWithEmailAndPassword } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -18,6 +16,13 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+// Initialize the FirebaseUI Widget using Firebase.
+//var ui = new firebaseui.auth.AuthUI(firebaseui.auth());
+
 const auth = getAuth(app);
 
-console.log(app)
+const u = async() =>{ await singInWithEmailAndPassword(auth, 'i.alfonso@uniandes.edu.co', 'MurxMb5Kfxxtx`#~')}
+
+const user = auth.currentUser
+
+console.log (user)
