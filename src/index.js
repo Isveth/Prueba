@@ -21,8 +21,16 @@ const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
 
-const u = async() =>{ await singInWithEmailAndPassword(auth, 'i.alfonso@uniandes.edu.co', 'MurxMb5Kfxxtx`#~')}
+const loginUSer = async (email, pass) => {
+  signInWithEmailAndPassword(auth,email, pass)
+ .then((userCredential) => {
+ console.log('Muy bien!!!. Bienvenido', userCredential.user);
+ })
+ .catch((error) => {
+ console.log('Contraseña no válida. Vuelve a intentarlo', error.message);
+ });
+ };
 
-const user = auth.currentUser
+ loginUSer('i.alfonso@uniandes.edu.co', 'MurxMb5Kfxxtx`#~').then(response => console.log('respuesta con funcion logIn', response))
 
-console.log (user)
+ //console.log(auth.currentUser)
