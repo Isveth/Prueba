@@ -16,21 +16,21 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// Initialize the FirebaseUI Widget using Firebase.
-//var ui = new firebaseui.auth.AuthUI(firebaseui.auth());
-
+// Initialize the auth module using Firebase.
 const auth = getAuth(app);
 
+// Building a function to log in with email and password using Auth module
 const loginUSer = async (email, pass) => {
   signInWithEmailAndPassword(auth,email, pass)
  .then((userCredential) => {
- console.log('Muy bien!!!. Bienvenido', userCredential.user);
+ console.log('Muy bien!!!. Bienvenido', userCredential.user); // succesful login message 
  })
  .catch((error) => {
- console.log('Contraseña no válida. Vuelve a intentarlo', error.message);
+ console.log('Contraseña no válida. Vuelve a intentarlo', error.message); // Failed loging message
  });
  };
 
+ // Initialize LogIn function to connect to the project
  loginUSer('i.alfonso@uniandes.edu.co', 'MurxMb5Kfxxtx`#~').then(response => console.log('respuesta con funcion logIn', response))
 
  //console.log(auth.currentUser)
