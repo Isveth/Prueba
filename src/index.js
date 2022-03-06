@@ -99,7 +99,7 @@ let firestore = getFirestore(app);
 // Build a documents to store the data
 const userColection = collection(firestore, 'users')
 async function addNewDocument () {
-  const newDoc = addDoc (userColection, users.data())
+  const newDoc = addDoc (userColection, userColection.data())
 }
 
 
@@ -108,10 +108,14 @@ async function addNewDocument () {
 function listenToADoc(){
   onSnapshot (userColection, (docSnapshot) => {
     if (docSnapshot.exists()){
-      const docData = docSnapshot.data
+      const docData = docSnapshot.data()
       console.log(`Data in real time: ${JASON.stringify(docData)}`)
     }
   } )
 }
+
+// Queryng the data
+
+
 
 
